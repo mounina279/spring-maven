@@ -1,16 +1,10 @@
-# Dockerfile pour Spring Boot avec Java 17
-
-#Image de base stable pour Java 17
 FROM eclipse-temurin:17-jdk-jammy
-
-#Définir le répertoire de travail dans le conteneur
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
-
-#Copier le JAR généré par Maven dans le conteneur
-COPY target/dockerdemo-0.0.1-SNAPSHOT.jar docker-demo.jar
-
-#Exposer le port 8080 (celui utilisé par Spring Boot)
+# Copier le fichier jar généré dans le conteneur
+COPY target/docker-demo-0.0.1-SNAPSHOT.jar docker-demo.jar
+# Exposer le port sur lequel Spring Boot écoute
 EXPOSE 8080
-
-#Commande pour lancer l'application Spring Boot
+# Commande pour lancer l'application Spring Boot
 ENTRYPOINT ["java", "-jar", "/app/docker-demo.jar"]
+
