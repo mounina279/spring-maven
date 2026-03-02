@@ -1,7 +1,7 @@
 # Dockerfile pour Spring Boot avec Java 17
 
 #Image de base stable pour Java 17
-FROM eclipse-temurin:17-jdk
+FROM eclipse-temurin:17-jdk-jammy
 
 #Définir le répertoire de travail dans le conteneur
 WORKDIR /app
